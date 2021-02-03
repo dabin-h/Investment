@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.jojoldu.blogcode'
+group = 'com.toy.blogcode'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 

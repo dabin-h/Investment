@@ -2,8 +2,7 @@
 
 aws:
   paramstore:
-    enabled: true
+    enabled: false
     prefix: /spring-boot-aws
     name: cloud-parameter-store
     profileSeparator: _
-
