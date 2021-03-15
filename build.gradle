@@ -23,14 +23,17 @@ ext {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-aws'
     implementation 'org.springframework.cloud:spring-cloud-starter-aws-jdbc'
     implementation 'org.springframework.cloud:spring-cloud-starter-aws-parameter-store-config'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2'
     implementation 'junit:junit:4.12'
     implementation 'junit:junit:4.12'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
     compileOnly 'org.projectlombok:lombok'
     runtime 'com.h2database:h2:1.4.197'
     annotationProcessor 'org.projectlombok:lombok'
