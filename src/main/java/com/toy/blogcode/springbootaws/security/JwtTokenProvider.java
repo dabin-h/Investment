@@ -64,7 +64,6 @@ public class JwtTokenProvider {
 
     // Request의 Header에서 token 파싱 : "X-AUTH-TOKEN: jwt토큰"
     public String resolveToken(HttpServletRequest req) {
-        // TODO: 2020-07-24 defensive code is required
         return req.getHeader("X-AUTH-TOKEN");
     }
 
