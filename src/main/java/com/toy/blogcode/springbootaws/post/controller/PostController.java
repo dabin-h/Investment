@@ -28,7 +28,7 @@ public class PostController {
         postsRepository.save(dto.toEntity());
     }
 
-    @PostMapping("/find")
+    @GetMapping("/find")
     public List<Posts> selectPosts(){
         List<Posts> postsList = postsRepository.findAll();
         return postsList;
