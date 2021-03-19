@@ -5,7 +5,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-//TEST for EUMIN
+//TEST for Dabin
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class SampleTest {
