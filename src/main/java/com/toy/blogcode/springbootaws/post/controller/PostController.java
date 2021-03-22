@@ -1,11 +1,11 @@
 package com.toy.blogcode.springbootaws.post.controller;
 
 import com.toy.blogcode.springbootaws.common.CommonResponse;
-import com.toy.blogcode.springbootaws.common.domain.CommonListResult;
-import com.toy.blogcode.springbootaws.common.domain.CommonResult;
-import com.toy.blogcode.springbootaws.post.domain.PostRepository;
-import com.toy.blogcode.springbootaws.post.domain.Posts;
-import com.toy.blogcode.springbootaws.post.dto.PostsSaveRequestDto;
+import com.toy.blogcode.springbootaws.common.response.CommonListResult;
+import com.toy.blogcode.springbootaws.common.response.CommonResult;
+import com.toy.blogcode.springbootaws.model.repository.PostRepository;
+import com.toy.blogcode.springbootaws.model.entity.Posts;
+import com.toy.blogcode.springbootaws.model.dto.PostsDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,7 +30,7 @@ public class PostController {
     }
 
     @PostMapping("/posts")
-    public CommonResult savePosts(@RequestBody PostsSaveRequestDto dto){
+    public CommonResult savePosts(@RequestBody PostsDto dto){
         postsRepository.save(dto.toEntity());
         return commonResponse.normalResult();
     }

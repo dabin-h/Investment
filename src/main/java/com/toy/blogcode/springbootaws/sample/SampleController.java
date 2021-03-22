@@ -1,19 +1,20 @@
 package com.toy.blogcode.springbootaws.sample;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-/**
- * Created by toy@gmail.com on 01/02/2021
- */
-
-@RequiredArgsConstructor
 @RestController
 public class SampleController {
 
-    @GetMapping("/sample/test")
+    @GetMapping("/sample")
     public String sample() {
         return "sample test";
+    }
+
+    @GetMapping(value = "/sample/test")
+    public ModelAndView test(ModelAndView mav) {
+        mav.setViewName("sample/test");
+        return mav;
     }
 }

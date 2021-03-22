@@ -1,4 +1,4 @@
-package com.toy.blogcode.springbootaws.post.service;
+package com.toy.blogcode.springbootaws.common.service;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

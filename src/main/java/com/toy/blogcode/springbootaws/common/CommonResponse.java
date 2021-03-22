@@ -1,8 +1,8 @@
 package com.toy.blogcode.springbootaws.common;
 
-import com.toy.blogcode.springbootaws.common.domain.CommonListResult;
-import com.toy.blogcode.springbootaws.common.domain.CommonResult;
-import com.toy.blogcode.springbootaws.common.domain.CommonSingleResult;
+import com.toy.blogcode.springbootaws.common.response.CommonListResult;
+import com.toy.blogcode.springbootaws.common.response.CommonResult;
+import com.toy.blogcode.springbootaws.common.response.CommonSingleResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

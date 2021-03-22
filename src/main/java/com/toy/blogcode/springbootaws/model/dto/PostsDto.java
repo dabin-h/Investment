@@ -1,6 +1,6 @@
-package com.toy.blogcode.springbootaws.post.dto;
+package com.toy.blogcode.springbootaws.model.dto;
 
-import com.toy.blogcode.springbootaws.post.domain.Posts;
+import com.toy.blogcode.springbootaws.model.entity.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,14 +9,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class PostsSaveRequestDto {
+public class PostsDto {
 
     private String title;
     private String content;
     private String author;
 
     @Builder
-    public PostsSaveRequestDto(String title, String content, String author) {
+    public PostsDto(String title, String content, String author) {
         this.title = title;
         this.content = content;
         this.author = author;

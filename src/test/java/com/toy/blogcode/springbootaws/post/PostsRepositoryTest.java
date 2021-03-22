@@ -1,7 +1,7 @@
 package com.toy.blogcode.springbootaws.post;
 
-import com.toy.blogcode.springbootaws.post.domain.PostRepository;
-import com.toy.blogcode.springbootaws.post.domain.Posts;
+import com.toy.blogcode.springbootaws.model.repository.PostRepository;
+import com.toy.blogcode.springbootaws.model.entity.Posts;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

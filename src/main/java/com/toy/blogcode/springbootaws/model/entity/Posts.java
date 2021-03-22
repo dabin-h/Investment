@@ -1,4 +1,4 @@
-package com.toy.blogcode.springbootaws.post.domain;
+package com.toy.blogcode.springbootaws.model.entity;
 
 import lombok.AccessLevel;
 import lombok.Builder;

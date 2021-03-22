@@ -1,4 +1,4 @@
-package com.toy.blogcode.springbootaws.common.domain;
+package com.toy.blogcode.springbootaws.common.response;
 
 import lombok.Data;
 

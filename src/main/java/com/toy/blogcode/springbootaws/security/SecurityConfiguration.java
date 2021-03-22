@@ -27,7 +27,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         String[] staticResources  =  {
-                "/*/signin", "/*/signin/**", "/*/signup", "/*/signup/**", "/social/**","/*/sample/**","/sample/**"
+                "/*/signin", "/*/signin/**", "/*/signup", "/*/signup/**", "/social/**","/*/sample/**","/sample/**","/*/find/**","/find/**"
         };
 
         http
