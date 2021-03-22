@@ -1,4 +1,4 @@
-package com.toy.blogcode.springbootaws.post.dto;
+package com.toy.blogcode.springbootaws.post.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
