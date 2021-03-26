@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
     function loginWithKakao() {
-        alert('loginWithKakao');
-
-     /*   $.ajax({
+        $.ajax({
             url: '/login/getKakaoAuthUrl',
             type: 'get',
             async: false,
@@ -16,11 +15,10 @@
             success: function (res) {
                 location.href = res;
             }
-        });*/
-
+        });
     }
 </script>
 <body>
-    <button onclick="loginWithKakao()">버튼</button>
+    <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" onclick="loginWithKakao()" style="cursor: pointer"/>
 </body>
 </html>
