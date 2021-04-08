@@ -27,6 +27,5 @@ pnpm-debug.log*
 /public/favicon.ico
 /public/index.html
 /src/assets/logo.png
-/package.json
 /package-lock.json
 /README.md
