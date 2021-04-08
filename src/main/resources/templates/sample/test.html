@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>VueTest</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
-TEST PAGE~!
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>Vuetorial Test Site</h1>
+</div>
+
+<div id="postTable" class="row" style="padding:0px 10px;">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="list in boardList" v-on:click="viewContent(list.boardIdx)">
+            <td>{{list.boardIdx}}</td>
+            <td>{{list.title}}</td>
+            <td>{{list.userNm}}</td>
+            <td>{{list.viewCnt}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p>Footer</p>
+</div>
+
+
+
+<script type="text/javascript">
+
+    var getList = function(){
+        axios.get('/board/getList')
+            .then(function(response) {
+                boardList.boardList = response.data;
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }
+
+    var boardList = new Vue({
+        el: '#postTable',
+        data: {
+            boardList: null
+        },
+        mounted: function(){
+            getList();
+        },
+        methods: {
+            viewContent: function(boardIdx) {
+                window.location.href=`/board/viewContent?boardIdx=${boardIdx}`;
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
