@@ -21,11 +21,3 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-/src/components/HelloWorld.vue
-/src/App.vue
-/babel.config.js
-/public/favicon.ico
-/public/index.html
-/src/assets/logo.png
-/package-lock.json
-/README.md
