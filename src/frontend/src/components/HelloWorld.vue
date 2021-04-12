@@ -1,40 +1,95 @@
-<template>
+<!--  <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+    <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  </div>
+</template>-->
+
+<template>
+  <div class="container">
+    <h1>{{ msg }}</h1>
+
+    <form @submit.prevent="submitForm">
+      <div>
+        <label for="email">email</label>
+        <input type="text" id="email" v-model="email" />
+      </div>
+      <div>
+        <label for="name">성함</label>
+        <input type="text" id="name" v-model="name" />
+      </div>
+      <div>
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" v-model="password" />
+      </div>
+      <div>
+        <label for="passwordConfirm">비밀번호 확인</label>
+        <input type="password" id="passwordConfirm" v-model="passwordConfirm" />
+      </div>
+      <div>
+        <label for="position">직책</label>
+        <input type="text" id="position" v-model="position" />
+      </div>
+      <div>
+        <label for="teamName">팀 이름</label>
+        <input type="text" id="teamName" v-model="teamName" />
+      </div>
+      <button type="submit">회원가입</button>
+    </form>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'SignupForm',
+  data() {
+    return {
+      email: '',
+      name: '',
+      password: '',
+      passwordConfirm: '',
+      position: '',
+      teamName: '',
+    };
+  },
+  methods: {
+    submitForm() {
+      console.log('dd');
+    },
+  },
+};
+</script>
+
+<style scoped></style>
 
 <script>
 export default {
   name: 'HelloWorld test',
   props: {
     msg: String
+  }
+},
+
+async submitForm() {
+
+  //validation 생략
+
+  const userData = {
+    email: this.email,
+    name: this.name,
+    password: this.password,
+    position: this.position,
+    teamName: this.teamName,
+  };
+
+  const response = await registerUser(userData);
+  if (response.status == 200) {
+    alert('환영합니다.');
+    this.$router.push('/login');
+  } else {
+    alert(response.data);
   }
 }
 </script>
