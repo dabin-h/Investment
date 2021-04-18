@@ -70,28 +70,28 @@ export default {
   props: {
     msg: String
   }
-},
-
-async submitForm() {
-
-  //validation 생략
-
-  const userData = {
-    email: this.email,
-    name: this.name,
-    password: this.password,
-    position: this.position,
-    teamName: this.teamName,
-  };
-
-  const response = await registerUser(userData);
-  if (response.status == 200) {
-    alert('환영합니다.');
-    this.$router.push('/login');
-  } else {
-    alert(response.data);
-  }
 }
+//
+// async submitForm() {
+//
+//   //validation 생략
+//
+//   const userData = {
+//     email: this.email,
+//     name: this.name,
+//     password: this.password,
+//     position: this.position,
+//     teamName: this.teamName,
+//   };
+//
+//   const response = await registerUser(userData);
+//   if (response.status == 200) {
+//     alert('환영합니다.');
+//     this.$router.push('/login');
+//   } else {
+//     alert(response.data);
+//   }
+// }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
