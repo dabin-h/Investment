@@ -3,6 +3,7 @@ package com.toy.blogcode.springbootaws.login.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -12,6 +13,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -26,25 +28,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-//import org.springframework.beans.factory.annotation.Value;
+import lombok.RequiredArgsConstructor;
 
-@PropertySource("classpath:/app.properties")
 @Repository
+
+@RequiredArgsConstructor
+@Component
 public class KakaoService {
 
-    @Value("${app.kakaoAuthUrl}")
+    @Value("${spring.login.kakaoAuthUrl}")
     private String kakaoAuthUrl;
 
-    @Value("${app.kakaoApiKey}")
+    @Value("${spring.login.kakaoApiKey}")
     private String kakaoApiKey;
 
-    @Value("${app.redirectURI}")
+    @Value("${spring.login.redirectURI}")
     private String redirectURI;
 
-    @Value("${app.getUserInfoUrl}")
+    @Value("${spring.login.getUserInfoUrl}")
     private String getUserInfoUrl;
 
-    @Value("${app.kakaoLogoutUrl}")
+    @Value("${spring.login.kakaoLogoutUrl}")
     private String kakaoLogoutUrl;
 
     // 카카오 로그인창 호출
