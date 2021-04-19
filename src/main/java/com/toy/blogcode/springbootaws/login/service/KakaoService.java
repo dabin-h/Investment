@@ -26,20 +26,24 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+//import org.springframework.beans.factory.annotation.Value;
 
 @PropertySource("classpath:/app.properties")
-
 @Repository
-public class KakaoAPI {
+public class KakaoService {
 
     @Value("${app.kakaoAuthUrl}")
     private String kakaoAuthUrl;
+
     @Value("${app.kakaoApiKey}")
     private String kakaoApiKey;
+
     @Value("${app.redirectURI}")
     private String redirectURI;
+
     @Value("${app.getUserInfoUrl}")
     private String getUserInfoUrl;
+
     @Value("${app.kakaoLogoutUrl}")
     private String kakaoLogoutUrl;
 
